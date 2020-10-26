@@ -9,7 +9,7 @@ try:
     if option == "y":
         yt.streams[0].download()
     elif option == "n":
-        exit()
+        pass
     else:
         print("invalid option")
 #use this
