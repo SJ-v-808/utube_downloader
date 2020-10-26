@@ -1,10 +1,18 @@
 from pytube import YouTube
 
 try:
-    yt = YouTube("https://www.youtube.com/watch?v=9lq0rL0CtYE&list=RD9lq0rL0CtYE&start_radio=1")#.streams[0].download()
-    print(yt.title)
-    print(yt.thumbnail_url)
+    link = "https://www.youtube.com/watch?v=9lq0rL0CtYE&list=RD9lq0rL0CtYE&start_radio=1"
+    yt = YouTube(link)#.streams[0].download()
+    vidz_name = yt.title
+    text = "do u want to download " + vidz_name + " video ? [y/n]"
+    option = input(text)
+    if option == "y":
+        yt.streams[0].download()
+    elif option == "n":
+        exit()
+    else:
+        print("invalid option")
 #use this
 #pip3 install --user PyTube3
 except:
-    print("error bitch")
+    print("network issue try again!")
